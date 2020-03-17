@@ -8,11 +8,11 @@ import java.util.List;
 /**
  * @author xiao
  * @date 2018/12/5
- * @descripion ÅÅÁÐ
+ * @descripion ï¿½ï¿½ï¿½ï¿½
  */
 public class Permute {
     /**
-     * ×ÖµäÅÅÐòÈ«ÅÅÁÐ
+     * ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½
      */
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -23,7 +23,7 @@ public class Permute {
         Collections.sort(tempResult);
         result.add(new ArrayList<>(tempResult));
         while (true) {
-            // µÚÒ»¸ö×ó±ßÊýÐ¡ÓÚÓÒ±ßÊýµÄÎ»ÖÃ
+            // ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ò±ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
             int index = 0;
             for (int j = tempResult.size() - 1; j > 0; j--) {
                 if (tempResult.get(j - 1) < tempResult.get(j)) {
@@ -31,7 +31,7 @@ public class Permute {
                     break;
                 }
             }
-            // indexÓÒ²à´óÓÚindexÎ»ÖÃÖµµÄ×îÐ¡Î»ÖÃ
+            // indexï¿½Ò²ï¿½ï¿½ï¿½ï¿½indexÎ»ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ð¡Î»ï¿½ï¿½
             int lastIndex = 0;
             boolean isFind = false;
             for (int i = tempResult.size() - 1; i > index; i--) {
@@ -44,11 +44,11 @@ public class Permute {
             if (!isFind) {
                 break;
             }
-            // ½»»»indexºÍlastIndexµÄÖµ
+            // ï¿½ï¿½ï¿½ï¿½indexï¿½ï¿½lastIndexï¿½ï¿½Öµ
             int temp = tempResult.get(index);
             tempResult.set(index, tempResult.get(lastIndex));
             tempResult.set(lastIndex, temp);
-            // ½«indexºóµÄÔªËØ·­×ª
+            // ï¿½ï¿½indexï¿½ï¿½ï¿½Ôªï¿½Ø·ï¿½×ª
             int len = tempResult.size() - index - 1;
             for (int k = 1, l = tempResult.size() - 1; k <= len / 2; k++) {
                 int value = tempResult.get(k + index);
@@ -60,13 +60,13 @@ public class Permute {
         }
         return result;
     }
-    /**È«ÅÅÁÐ×ø±ê·¨.*/
+    /**È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê·¨.*/
     public static List<List<Integer>> premuteCoordinate(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> posList = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
-            // ¼ÇÂ¼×ø±ê
+            // ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½
             temp.add(nums[i]);
             posList.add(i);
         }
@@ -93,11 +93,11 @@ public class Permute {
                     break;
                 }
             }
-            // ½»»»ÏÂ±ê
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½
             int t = posList.get(lowIndex);
             posList.set(lowIndex, posList.get(highIndex));
             posList.set(highIndex, t);
-            // ·­×ª
+            // ï¿½ï¿½×ª
             for (int k = lowIndex + 1; k <= len; k++, len--) {
                 int l = posList.get(k);
                 posList.set(k, posList.get(len));

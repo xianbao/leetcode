@@ -75,16 +75,7 @@ public class WordSearch {
 
     public static void main(String[] args) {
         WordSearch test = new WordSearch();
-        char[][] board = new char[6][];
-        board[0] = new char[]{'b','a','a','b','a','b'};
-        board[1] = new char[]{'a','b','a','a','a','a'};
-        board[2] = new char[]{'a','b','a','b','b','a'};
-        board[3] = new char[]{'a','a','b','b','a','b'};
-        board[4] = new char[]{'a','a','b','b','b','a'};
-        board[5] = new char[]{'a','a','b','a','a','b'};
-        System.out.println(System.currentTimeMillis());
-        System.out.println(test.exist(board, "aabbbbabbaababaaaabababbaaba"));
-        System.out.println(System.currentTimeMillis());
+        String pattern = " *[+-]?((\\d+(\\.\\d*)?)|\\.\\d+)([e][+-]?\\d+)? *$";
     }
 
 }

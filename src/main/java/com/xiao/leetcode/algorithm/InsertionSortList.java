@@ -1,6 +1,6 @@
 package com.xiao.leetcode.algorithm;
 
-import com.xiao.leetcode.baseclass.ListNode;
+import com.xiao.leetcode.util.ListNode;
 
 /**
  * 对连链表按照插插入法排序
