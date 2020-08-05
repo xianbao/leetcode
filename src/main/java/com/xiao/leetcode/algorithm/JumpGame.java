@@ -12,6 +12,18 @@ public class JumpGame {
         return dfs(nums, flag, 0);
     }
 
+    public boolean canJump1(int[] nums) {
+        int mostDis = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i <= mostDis) {
+                mostDis = Math.max(mostDis, i + nums[i]);
+                if (mostDis >= nums.length - 1) return true;
+            }
+        }
+
+        return false;
+    }
+
     private boolean dfs(int[] nums, boolean[] flag, int index) {
         if (index >= nums.length - 1) return true;
         else {

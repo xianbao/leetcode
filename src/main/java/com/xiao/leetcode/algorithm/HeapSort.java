@@ -7,7 +7,7 @@ package com.xiao.leetcode.algorithm;
  */
 public class HeapSort {
     /**
-     * ¶ÑÅÅÐò
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * */
     public static void heapSort(int[] arr, int heapSize, int index) {
         int left = 2 * index + 1;
@@ -20,7 +20,7 @@ public class HeapSort {
             large = right;
         }
         if (large != index) {
-            // ½»»»×î´óÖµ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
             int temp = arr[index];
             arr[index] = arr[large];
             arr[large] = temp;
@@ -28,11 +28,16 @@ public class HeapSort {
         }
     }
     /**
-     * ´´½¨¶Ñ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * */
     public static void buildHeap(int[] arr) {
         for (int i = (arr.length - 2) / 2; i>=0; i--) {
             heapSort(arr, arr.length, i);
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{5,4,3,2,1};
+        buildHeap(arr);
     }
 }

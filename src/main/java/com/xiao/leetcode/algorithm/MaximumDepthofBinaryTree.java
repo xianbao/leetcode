@@ -1,5 +1,8 @@
 package com.xiao.leetcode.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MaximumDepthofBinaryTree {
 
 
@@ -27,11 +30,33 @@ public class MaximumDepthofBinaryTree {
         return count;
     }
 
+    public int lastRemaining(int n, int m) {
+        List<Integer> remainingList = new ArrayList<>();
+
+        for(int i = 0; i < n; i++) {
+            remainingList.add(i);
+        }
+        int index;
+        int current = 0;
+        // 0 1 2 3 4
+        while (remainingList.size() > 1) {
+            if(m + current > remainingList.size()) {
+                current = (m + current) % remainingList.size() - 1;
+                remainingList.remove(current == - 1 ? 0 : current);
+            } else {
+                remainingList.remove(m + current - 1);
+                current = m + current - 1 ;
+                current = current >= remainingList.size() ? current - 1 : current;
+
+            }
+        }
+        return remainingList.get(0);
+    }
+
 
 
     public static void main(String[] args) {
-        TreeNode node = new TreeNode(1);
-        node.left = new TreeNode(2);
-        MaximumDepthofBinaryTree test = new MaximumDepthofBinaryTree();
+        MaximumDepthofBinaryTree object = new MaximumDepthofBinaryTree();
+        System.out.println(object.lastRemaining(10, 17));
     }
 }
